@@ -1,0 +1,7 @@
+{
+  "name": "VATALIQUE - Elite AI Solutions",
+  "description": "Premium AI Agency website featuring 3D neural environments, immersive scroll experiences, and an intelligent AI concierge.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
