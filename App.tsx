@@ -24,11 +24,11 @@ const App: React.FC = () => {
   if (!isLoaded) {
     return (
       <div className="fixed inset-0 bg-black flex flex-col items-center justify-center z-[200]">
-        <motion.div 
+        <motion.div
           initial={{ width: 0 }}
           animate={{ width: "200px" }}
           transition={{ duration: 1 }}
-          className="h-[1px] bg-cyan-400 mb-4" 
+          className="h-[1px] bg-cyan-400 mb-4"
         />
         <motion.span
           animate={{ opacity: [0, 1, 0] }}
@@ -45,7 +45,7 @@ const App: React.FC = () => {
     <div className="relative w-full overflow-hidden bg-[#050505]">
       {/* Progress Bar */}
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-cyan-400 z-[110] origin-left" style={{ scaleX }} />
-      
+
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-[100] px-6 md:px-12 py-8 flex items-center justify-between mix-blend-difference">
         <div className="font-syncopate font-bold text-2xl tracking-tighter">
@@ -53,8 +53,8 @@ const App: React.FC = () => {
         </div>
         <div className="hidden md:flex items-center gap-10">
           {['Expertise', 'Ecosystem', 'Impact', 'Architecture'].map((item) => (
-            <a 
-              key={item} 
+            <a
+              key={item}
               href={`#${item.toLowerCase()}`}
               className="text-[10px] uppercase font-bold tracking-[0.3em] text-gray-400 hover:text-white transition-colors"
             >
@@ -62,7 +62,7 @@ const App: React.FC = () => {
             </a>
           ))}
           <button className="px-6 py-2 border border-white/20 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-            Secure Access
+            What we do ?
           </button>
         </div>
         <div className="md:hidden">
@@ -74,12 +74,12 @@ const App: React.FC = () => {
 
       {/* Main Content */}
       <ThreeScene />
-      
+
       <main className="relative z-10">
         <Hero />
         <Services />
         <InteractiveDashboard />
-        
+
         {/* Footer */}
         <footer className="relative py-20 px-6 border-t border-white/5 bg-black">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">

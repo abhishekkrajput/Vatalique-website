@@ -1,7 +1,10 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({
+  apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
+});
+
 
 export async function getConciergeResponse(message: string, history: { role: 'user' | 'model', parts: { text: string }[] }[]) {
   try {
