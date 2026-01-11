@@ -52,7 +52,7 @@ const App: React.FC = () => {
           VATA<span className="text-cyan-400">LIQUE</span>
         </div>
         <div className="hidden md:flex items-center gap-10">
-          {['Expertise', 'Ecosystem', 'Impact', 'Architecture'].map((item) => (
+          {['Services', 'Ecosystem', 'Results', 'Architecture'].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}

@@ -7,7 +7,7 @@ import { ChatMessage } from '../types';
 const AIConcierge: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'assistant', content: "Systems initialized. I am the VATALIQUE AI Concierge. How may I assist your transformation today?" }
+    { role: 'assistant', content: "Hey — I’m the Vatalique AI Concierge. Want to explore how custom AI agents could automate your business?" }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -54,7 +54,7 @@ const AIConcierge: React.FC = () => {
                 <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_cyan]" />
                 <span className="font-syncopate text-[10px] uppercase tracking-widest font-bold">VATALIQUE CORE V3.0</span>
               </div>
-              <button 
+              <button
                 onClick={() => setIsOpen(false)}
                 className="text-gray-500 hover:text-white transition-colors"
               >
@@ -65,7 +65,7 @@ const AIConcierge: React.FC = () => {
             </div>
 
             {/* Messages */}
-            <div 
+            <div
               ref={scrollRef}
               className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth"
             >
@@ -76,11 +76,10 @@ const AIConcierge: React.FC = () => {
                   key={i}
                   className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
-                  <div className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm leading-relaxed ${
-                    msg.role === 'user' 
-                      ? 'bg-white text-black font-medium' 
+                  <div className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm leading-relaxed ${msg.role === 'user'
+                      ? 'bg-white text-black font-medium'
                       : 'bg-white/5 text-gray-300 border border-white/5'
-                  }`}>
+                    }`}>
                     {msg.content}
                   </div>
                 </motion.div>
@@ -107,7 +106,7 @@ const AIConcierge: React.FC = () => {
                   placeholder="Ask our AI architect..."
                   className="w-full bg-white/5 border border-white/10 rounded-full py-3 px-6 pr-12 text-sm focus:outline-none focus:border-cyan-400/50 transition-all placeholder:text-gray-600"
                 />
-                <button 
+                <button
                   onClick={handleSend}
                   className="absolute right-2 p-2 bg-cyan-400 text-black rounded-full hover:scale-105 transition-all"
                 >
