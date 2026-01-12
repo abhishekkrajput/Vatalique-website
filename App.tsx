@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import AIConcierge from './components/AIConcierge';
 import InteractiveDashboard from './components/InteractiveDashboard';
+import TheVataliqueHouse from './components/TheVataliqueHouse';
 import { ThemeToggle } from './components/ThemeToggle';
 import WhyUsPage from './components/WhyUsPage';
 import { Footer } from './components/Footer';
@@ -119,6 +120,7 @@ const App: React.FC = () => {
               <Hero />
               <Services />
               <InteractiveDashboard />
+              <TheVataliqueHouse />
             </motion.div>
           )}
 
