@@ -38,12 +38,13 @@ const TheVataliqueHouse: React.FC = () => {
                         className="absolute inset-[-5%] w-[110%] h-[110%]"
                     >
                         <img
-                            src="/vatalique_hq.png"
+                            src="/vatalique_house_V2.jpg"
                             alt="The Vatalique House"
-                            className="w-full h-full object-cover opacity-80 mix-blend-screen transition-all duration-700 ease-out"
+                            className="w-full h-full object-cover opacity-60 mix-blend-normal grayscale-[0.8] contrast-125 brightness-110 saturate-[1.1] transition-all duration-700 ease-out"
                             style={{
                                 objectPosition: 'center center',
                                 transform: 'translateZ(0)',
+                                filter: 'grayscale(80%) contrast(1.2) brightness(1.1)' // Enhanced filter fallback
                             }}
                         />
 
