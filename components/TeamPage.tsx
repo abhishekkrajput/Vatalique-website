@@ -5,12 +5,12 @@ import BookingModal from './BookingModal';
 // --- DATA ---
 const TEAM = [
     {
-        name: "Abhi Raj",
+        name: "Abhishek Rajput",
         role: "Head of Operations",
         responsibility: "Leads system architecture, strategy, and overall execution.",
         initials: "AR",
         accent: "text-cyan-400",
-        image: "https://pbs.twimg.com/media/G-os50XaEAAVcCt?format=jpg&name=small"
+        image: "https://pbs.twimg.com/media/G-oxf0_bMAAH394?format=jpg&name=small"
     },
     {
         name: "Uddit",
