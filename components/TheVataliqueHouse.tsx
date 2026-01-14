@@ -38,17 +38,17 @@ const TheVataliqueHouse: React.FC = () => {
                         className="absolute inset-[-5%] w-[110%] h-[110%]"
                     >
                         <img
-                            src="https://pbs.twimg.com/media/G-blMoSacAAYCiQ?format=jpg&name=small"
-                            alt=""
-                            className="w-full h-full object-cover filter grayscale-[100%] contrast-[1.2] brightness-[1.1] opacity-50 mix-blend-luminosity transition-all duration-700 ease-out"
+                            src="/vatalique_hq.png"
+                            alt="The Vatalique House"
+                            className="w-full h-full object-cover opacity-80 mix-blend-screen transition-all duration-700 ease-out"
                             style={{
-                                objectPosition: 'center 35%',
+                                objectPosition: 'center center',
                                 transform: 'translateZ(0)',
                             }}
                         />
 
                         {/* Lighting Layers (Preserving Transparency) */}
-                        <div className="absolute inset-0 bg-black/20 mix-blend-overlay" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 via-transparent to-transparent mix-blend-overlay" />
 
                         {/* Clear Logo Mask (Radial Light) */}
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0%,transparent_50%)] mix-blend-overlay pointer-events-none" />

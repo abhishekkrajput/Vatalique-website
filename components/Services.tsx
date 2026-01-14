@@ -49,20 +49,19 @@ const ServiceCard: React.FC<{ service: Service, index: number, onSelect: (s: Ser
         <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/5 to-violet-500/5 dark:from-cyan-500/10 dark:to-violet-500/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500" />
         <div className="relative aspect-video rounded-3xl border border-slate-100 bg-white/90 shadow-lg shadow-slate-200/50 dark:border-white/5 dark:bg-white/5 dark:shadow-2xl dark:backdrop-blur-3xl overflow-hidden transition-colors duration-300">
           <img
-            src={`https://picsum.photos/800/450?random=${index}`}
-            className="w-full h-full object-cover opacity-90 dark:opacity-40 group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0"
+            src={
+              service.id === 'business_automation' ? '/vatalique_automation_system.png' :
+                service.id === 'workflows' ? '/vatalique_workflow.png' :
+                  service.id === 'custom_agents' ? '/vatalique_custom_ai.png' :
+                    service.id === 'websites_apps' ? '/vatalique_ai_websites.png' :
+                      service.id === 'strategy' ? '/vatalique_ai_strategy.png' :
+                        `https://picsum.photos/800/450?random=${index}`
+            }
+            className="w-full h-full object-cover opacity-90 dark:opacity-80 group-hover:scale-105 transition-transform duration-700 mix-blend-screen"
             alt={service.title}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent dark:from-black/80 dark:via-transparent dark:to-transparent transition-colors duration-300" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="w-32 h-32 border border-cyan-500/30 dark:border-cyan-400/20 rounded-full flex items-center justify-center"
-            >
-              <div className="w-16 h-16 border-2 border-cyan-500/50 dark:border-cyan-400/40 rounded-full" />
-            </motion.div>
-          </div>
+          <div className={`absolute inset-0 bg-gradient-to-tr ${index % 2 === 0 ? 'from-cyan-900/40' : 'from-purple-900/40'} via-transparent to-transparent z-10 pointer-events-none`} />
+          <div className="absolute inset-0 border border-white/10 rounded-3xl z-20" />
         </div>
       </div>
     </motion.div>

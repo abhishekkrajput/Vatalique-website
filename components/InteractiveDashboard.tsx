@@ -6,6 +6,7 @@ const TESTIMONIALS = [
     name: "Jamee",
     role: "Khandarkar • Matrimonial",
     quote: "“Vatalique helped us automate critical workflows that were previously handled manually. The system they built didn’t just work — it scaled with our users and reduced operational friction significantly.”",
+    image: "/vatalique_khandarkar.png",
     link: "https://khandarkar.com/explore",
     btn: "Visit Site"
   },
@@ -13,6 +14,7 @@ const TESTIMONIALS = [
     name: "Darshan",
     role: "Zammernow • Fashion QC",
     quote: "“We needed automation that could keep up with speed, volume, and growth. Vatalique delivered systems that run reliably without constant oversight. This wasn’t a demo — it was real execution.”",
+    image: "/vatalique_zammernow.png",
     link: "https://zammernow.com/",
     btn: "Visit Site"
   },
@@ -20,6 +22,7 @@ const TESTIMONIALS = [
     name: "Narayan",
     role: "Shipsarthi • Logistics",
     quote: "“Our operations involved too much manual coordination. Vatalique designed intelligent systems that streamlined decision-making and removed operational bottlenecks completely.”",
+    image: "/vatalique_shipsarthi.png",
     link: "https://shipsarthi.com/",
     btn: "Visit Site"
   },
@@ -27,6 +30,7 @@ const TESTIMONIALS = [
     name: "Siddhart",
     role: "Gantavyam • Mobility",
     quote: "“Building for safety requires reliability and trust. Vatalique approached our system with that seriousness. The automation they delivered made our operations more predictable and scalable.”",
+    image: "/vatalique_gantavyam.png",
     link: "https://www.gantavyam.site/",
     btn: "Visit Site"
   },
@@ -34,6 +38,7 @@ const TESTIMONIALS = [
     name: "Bikas Lohia",
     role: "Sitabience IP • Legal Tech",
     quote: "“The system Vatalique built transformed how patents are drafted. Clear inputs, structured intelligence, and reliable outputs. It saved time, reduced complexity, and delivered consistent results.”",
+    image: "/vatalique_patface.png",
     link: "https://www.patface.com/",
     btn: "See Work"
   }
@@ -123,11 +128,11 @@ const InteractiveDashboard: React.FC = () => {
             onDragEnd={() => setIsDragging(false)}
           >
             {[...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS].map((item, idx) => (
-              <div key={idx} className="w-[300px] md:w-[350px] flex-shrink-0 flex-grow-0 p-6 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm hover:border-cyan-500/30 transition-colors flex flex-col justify-between h-auto select-none">
+              <div key={idx} className="w-[300px] md:w-[350px] flex-shrink-0 flex-grow-0 p-6 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm hover:border-cyan-500/30 transition-colors flex flex-col justify-between h-auto select-none group">
                 <div className="mb-6 pointer-events-none"> {/* Disable pointer events on text to prevent text selection while dragging */}
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center overflow-hidden shrink-0">
-                      <svg className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
+                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center overflow-hidden shrink-0 relative">
+                      <img src={item.image} alt={item.name} className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div>
                       <h4 className="font-bold text-white text-sm">{item.name}</h4>
