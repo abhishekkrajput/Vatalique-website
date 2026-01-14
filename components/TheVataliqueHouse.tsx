@@ -23,7 +23,7 @@ const TheVataliqueHouse: React.FC = () => {
                 className="mb-10 text-center z-10"
             >
                 <h2 className="text-xl md:text-2xl font-syncopate font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70 tracking-[0.3em] uppercase drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-                    The Vatalique House
+                    THE VATA<span className="text-cyan-400">LIQUE</span> HOUSE
                 </h2>
                 <div className="w-1 h-8 bg-gradient-to-b from-cyan-500/0 via-cyan-500/50 to-cyan-500/0 mx-auto mt-4" />
             </motion.div>
@@ -40,11 +40,10 @@ const TheVataliqueHouse: React.FC = () => {
                         <img
                             src="/vatalique_house_V2.jpg"
                             alt="The Vatalique House"
-                            className="w-full h-full object-cover opacity-60 mix-blend-normal grayscale-[0.8] contrast-125 brightness-110 saturate-[1.1] transition-all duration-700 ease-out"
+                            className="w-full h-full object-cover opacity-50 mix-blend-normal grayscale scale-110 contrast-125 brightness-110 saturate-[1.1] transition-all duration-1000 ease-out group-hover:grayscale-[0.4] group-hover:scale-100 group-hover:opacity-80 transform-gpu"
                             style={{
                                 objectPosition: 'center center',
-                                transform: 'translateZ(0)',
-                                filter: 'grayscale(80%) contrast(1.2) brightness(1.1)' // Enhanced filter fallback
+                                filter: 'contrast(1.2) brightness(1.1)'
                             }}
                         />
 
@@ -82,7 +81,7 @@ const TheVataliqueHouse: React.FC = () => {
                     <div className="max-w-4xl space-y-5">
                         {/* Primary Sentence - Crystal Clear */}
                         <p className="text-white text-2xl md:text-3xl font-bold leading-snug tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,1)] subpixel-antialiased">
-                            <span className="bg-cyan-900/30 text-cyan-100 px-2 py-1 rounded leading-loose box-decoration-clone">We are a small, focused team building systems that run inside real businesses.</span>
+                            We are a <span className="text-cyan-400">small</span>, <span className="text-cyan-400">focused</span> team <span className="text-cyan-400">building systems</span> that run inside <span className="text-cyan-400">real businesses</span>.
                         </p>
 
                         {/* Secondary Sentence */}
