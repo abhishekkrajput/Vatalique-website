@@ -57,7 +57,7 @@ const ServiceCard: React.FC<{ service: Service, index: number, onSelect: (s: Ser
                       service.id === 'strategy' ? '/vatalique_ai_strategy.png' :
                         `https://picsum.photos/800/450?random=${index}`
             }
-            className="w-full h-full object-cover opacity-90 dark:opacity-80 group-hover:scale-105 transition-transform duration-700 mix-blend-screen"
+            className="w-full h-full object-cover opacity-90 dark:opacity-80 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-transform duration-700 mix-blend-screen"
             alt={service.title}
           />
           <div className={`absolute inset-0 bg-gradient-to-tr ${index % 2 === 0 ? 'from-cyan-900/40' : 'from-purple-900/40'} via-transparent to-transparent z-10 pointer-events-none`} />
