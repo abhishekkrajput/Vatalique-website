@@ -5,127 +5,92 @@ import BookingModal from './BookingModal';
 // --- VISUAL COMPONENTS (Abstract System Visuals) ---
 
 const VisualAutomation = () => (
-    <div className="relative w-full h-full rounded-xl border border-white/10 bg-white/5 flex items-center justify-center overflow-hidden">
-        {/* Abstract Workflow Engine */}
-        <div className="relative w-64 h-48 flex flex-col justify-between">
-            {[0, 1, 2].map((i) => (
-                <div key={i} className="flex items-center gap-4">
-                    <motion.div
-                        className="w-12 h-12 rounded-lg border border-cyan-500/30 bg-cyan-900/20"
-                        initial={{ opacity: 0.5 }}
-                        animate={{ opacity: [0.5, 1, 0.5] }}
-                        transition={{ duration: 3, delay: i * 0.5, repeat: Infinity }}
-                    />
-                    <div className="flex-1 h-0.5 bg-cyan-500/20 overflow-hidden">
-                        <motion.div
-                            className="w-full h-full bg-cyan-400"
-                            initial={{ x: '-100%' }}
-                            animate={{ x: '100%' }}
-                            transition={{ duration: 2, delay: i * 0.5, repeat: Infinity, ease: 'linear' }}
-                        />
-                    </div>
-                    <motion.div
-                        className="w-8 h-8 rounded-full border border-white/10 bg-white/5"
-                        initial={{ scale: 0.8 }}
-                        animate={{ scale: [0.8, 1.1, 0.8] }}
-                        transition={{ duration: 2, delay: i * 0.5 + 1, repeat: Infinity }}
-                    />
-                </div>
-            ))}
-        </div>
+    <div className="relative w-full h-full rounded-xl border border-white/20 bg-white/5 flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.3)] group hover:border-cyan-500/30 transition-all duration-500">
+        {/* Glassmorphism Background Layer */}
+        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
+
+        {/* AI Automation System Image */}
+        <img
+            src="/vatalique_automation_system.png"
+            alt="AI Business Automation System"
+            className="relative w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 z-20 mix-blend-screen"
+        />
+
+        {/* Cinematic Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-cyan-900/20 via-transparent to-transparent z-30 pointer-events-none" />
+        <div className="absolute inset-0 border border-white/10 rounded-xl z-40" />
     </div>
 );
 
 const VisualVoice = () => (
-    <div className="relative w-full h-full rounded-xl border border-white/10 bg-white/5 flex items-center justify-center overflow-hidden">
-        {/* Audio Waveform */}
-        <div className="flex items-center gap-1 h-32">
-            {[...Array(20)].map((_, i) => (
-                <motion.div
-                    key={i}
-                    className="w-2 bg-purple-500/80 rounded-full"
-                    animate={{ height: [20, Math.random() * 100 + 20, 20] }}
-                    transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse', delay: i * 0.05 }}
-                />
-            ))}
-        </div>
+    <div className="relative w-full h-full rounded-xl border border-white/20 bg-white/5 flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.3)] group hover:border-purple-500/30 transition-all duration-500">
+        {/* Glassmorphism Background Layer */}
+        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
+
+        {/* AI Voice Agent Image */}
+        <img
+            src="/vatalique_voice_agent.png"
+            alt="AI Voice & Calling Agents"
+            className="relative w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 z-20 mix-blend-screen"
+        />
+
+        {/* Cinematic Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 via-transparent to-transparent z-30 pointer-events-none" />
+        <div className="absolute inset-0 border border-white/10 rounded-xl z-40" />
     </div>
 );
 
 const VisualCustomAI = () => (
-    <div className="relative w-full h-full rounded-xl border border-white/10 bg-white/5 flex items-center justify-center overflow-hidden">
-        {/* Neural Network / Brain */}
-        <div className="relative w-64 h-64">
-            {[...Array(6)].map((_, i) => (
-                <motion.div
-                    key={i}
-                    className="absolute w-3 h-3 bg-emerald-400 rounded-full"
-                    style={{
-                        top: `${Math.random() * 80 + 10}%`,
-                        left: `${Math.random() * 80 + 10}%`
-                    }}
-                    animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
-                    transition={{ duration: 2 + Math.random(), repeat: Infinity }}
-                >
-                    <div className="absolute inset-0 bg-emerald-400 blur-sm" />
-                </motion.div>
-            ))}
-            <svg className="absolute inset-0 w-full h-full">
-                <motion.path
-                    d="M32,32 Q128,128 224,32"
-                    fill="none"
-                    stroke="rgba(52, 211, 153, 0.2)"
-                    strokeWidth="1"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: [0, 1, 0] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                />
-                <motion.path
-                    d="M32,224 Q128,128 224,224"
-                    fill="none"
-                    stroke="rgba(52, 211, 153, 0.2)"
-                    strokeWidth="1"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: [0, 1, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "linear", delay: 1 }}
-                />
-            </svg>
-        </div>
+    <div className="relative w-full h-full rounded-xl border border-white/20 bg-white/5 flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.3)] group hover:border-emerald-500/30 transition-all duration-500">
+        {/* Glassmorphism Background Layer */}
+        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
+
+        {/* Custom AI Agent Image */}
+        <img
+            src="/vatalique_custom_ai.png"
+            alt="Custom AI & Agent Development"
+            className="relative w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 z-20 mix-blend-screen"
+        />
+
+        {/* Cinematic Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/20 via-transparent to-transparent z-30 pointer-events-none" />
+        <div className="absolute inset-0 border border-white/10 rounded-xl z-40" />
     </div>
 );
 
 const VisualWebsites = () => (
-    <div className="relative w-full h-full rounded-xl border border-white/10 bg-white/5 flex items-center justify-center overflow-hidden">
-        {/* Grid / Layout Interface */}
-        <div className="grid grid-cols-2 gap-4 w-64 h-48 rotate-3 skew-x-3 opacity-80">
-            <motion.div className="col-span-2 h-16 rounded-lg bg-blue-500/20 border border-blue-500/30" />
-            <motion.div className="h-28 rounded-lg bg-white/5 border border-white/10" />
-            <div className="h-28 flex flex-col gap-2">
-                <motion.div className="h-8 rounded-lg bg-white/5 border border-white/10" animate={{ width: ["100%", "80%", "100%"] }} transition={{ duration: 4, repeat: Infinity }} />
-                <motion.div className="h-8 rounded-lg bg-white/5 border border-white/10" />
-                <motion.div className="h-8 rounded-lg bg-white/5 border border-white/10" />
-            </div>
-        </div>
+    <div className="relative w-full h-full rounded-xl border border-white/20 bg-white/5 flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.3)] group hover:border-blue-500/30 transition-all duration-500">
+        {/* Glassmorphism Background Layer */}
+        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
+
+        {/* AI Websites & Apps Image */}
+        <img
+            src="/vatalique_ai_websites.png"
+            alt="AI-Powered Websites & Applications"
+            className="relative w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 z-20 mix-blend-screen"
+        />
+
+        {/* Cinematic Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 via-transparent to-transparent z-30 pointer-events-none" />
+        <div className="absolute inset-0 border border-white/10 rounded-xl z-40" />
     </div>
 );
 
 const VisualUX = () => (
-    <div className="relative w-full h-full rounded-xl border border-white/10 bg-white/5 flex items-center justify-center overflow-hidden">
-        {/* Interactive Elements */}
-        <div className="relative w-64 h-64 flex items-center justify-center">
-            {/* Click Ripple */}
-            <motion.div
-                className="absolute w-20 h-20 rounded-full border border-orange-400"
-                animate={{ scale: [0.5, 2], opacity: [1, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-            />
-            <motion.div
-                className="absolute w-32 h-32 rounded-full border border-orange-400/50"
-                animate={{ scale: [0.5, 2], opacity: [1, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
-            />
-            <motion.div className="w-4 h-4 rounded-full bg-orange-400" />
-        </div>
+    <div className="relative w-full h-full rounded-xl border border-white/20 bg-white/5 flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.3)] group hover:border-orange-500/30 transition-all duration-500">
+        {/* Glassmorphism Background Layer */}
+        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
+
+        {/* AI UX & Interface Image */}
+        <img
+            src="/vatalique_ai_ux.png"
+            alt="AI-Native UX & Interfaces"
+            className="relative w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 z-20 mix-blend-screen"
+        />
+
+        {/* Cinematic Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-orange-900/20 via-transparent to-transparent z-30 pointer-events-none" />
+        <div className="absolute inset-0 border border-white/10 rounded-xl z-40" />
     </div>
 );
 
