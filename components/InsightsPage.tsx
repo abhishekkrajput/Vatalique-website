@@ -69,6 +69,8 @@ interface Insight {
     title: string;
     thesis: string;
     content: React.ReactNode;
+    image: string;
+    glow: string;
 }
 
 const INSIGHTS: Insight[] = [
@@ -76,6 +78,8 @@ const INSIGHTS: Insight[] = [
         id: 1,
         title: "AI Tools Don’t Scale. Systems Do.",
         thesis: "Most businesses fail with AI because they adopt tools, not systems. Scale only comes from automation designed around business logic.",
+        image: "/vatalique_insight_1.png",
+        glow: "from-cyan-900/60",
         content: (
             <>
                 <p>The modern AI landscape is flooded with "tools"—chatbots, generators, copilots. Companies adopt them expecting magic, but get fragmentation instead. A tool requires a human operator. A system removes the need for one.</p>
@@ -91,6 +95,8 @@ const INSIGHTS: Insight[] = [
         id: 2,
         title: "Automation Without Intelligence Breaks Fast",
         thesis: "Blind automation creates fragility. Real automation requires decision-making, context, and adaptability.",
+        image: "/vatalique_insight_2.png",
+        glow: "from-purple-900/60",
         content: (
             <>
                 <p>Traditional automation (RPA) is rigid. It breaks if a button moves or a data format changes. AI introduces resiliency—the ability to understand intent rather than just following coordinates.</p>
@@ -106,6 +112,8 @@ const INSIGHTS: Insight[] = [
         id: 3,
         title: "Why Most AI Projects Never Reach Production",
         thesis: "AI demos are easy. Production systems require reliability, integration, and ownership.",
+        image: "/vatalique_insight_3.png",
+        glow: "from-emerald-900/60",
         content: (
             <>
                 <p>It takes a weekend to build a cool demo. It takes months to build a system that runs 24/7 without hallucinating or crashing. The gap is not in the model quality; it's in the engineering.</p>
@@ -121,6 +129,8 @@ const INSIGHTS: Insight[] = [
         id: 4,
         title: "Human-in-the-Loop Is a Transition, Not a Destination",
         thesis: "The goal of AI is not assistance — it is eventual autonomy with supervision.",
+        image: "/vatalique_insight_4.png",
+        glow: "from-orange-900/60",
         content: (
             <>
                 <p>Current "Co-pilot" paradigms are a safety net. They exist because models aren't fully trusted yet. But the economic value of AI lies in autonomy.</p>
@@ -136,6 +146,8 @@ const INSIGHTS: Insight[] = [
         id: 5,
         title: "AI ROI Comes From Removing People From Loops",
         thesis: "The real value of AI is not efficiency gains, but eliminating entire categories of manual work.",
+        image: "/vatalique_insight_5.png",
+        glow: "from-blue-900/60",
         content: (
             <>
                 <p>Making a slow process 20% faster is good. Removing the process entirely is revolutionary. Incremental gains often distract from the real opportunity: structural change.</p>
@@ -151,6 +163,8 @@ const INSIGHTS: Insight[] = [
         id: 6,
         title: "Interfaces Must Adapt to Intelligence",
         thesis: "Static UX cannot support intelligent systems. Interfaces must evolve with decision-making logic.",
+        image: "/vatalique_insight_6.png",
+        glow: "from-rose-900/60",
         content: (
             <>
                 <p>A static dashboard was fine for static data. But when data is generated in real-time by an agent, the interface needs to be fluid. It needs to show *reasoning*, not just results.</p>
@@ -202,7 +216,15 @@ const InsightsPage: React.FC = () => {
                             onClick={() => setSelectedInsight(insight)}
                         >
                             {/* Visual */}
-                            <AbstractVisual index={index} />
+                            <div className="w-full h-48 relative overflow-hidden group-hover:bg-white/10 transition-colors duration-500 rounded-t-2xl">
+                                <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
+                                <img
+                                    src={insight.image}
+                                    alt={insight.title}
+                                    className="relative w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 z-20 mix-blend-screen"
+                                />
+                                <div className={`absolute inset-0 bg-gradient-to-tr ${insight.glow} via-transparent to-transparent z-30 pointer-events-none opacity-40`} />
+                            </div>
 
                             {/* Content */}
                             <div className="p-8 flex-1 flex flex-col">
