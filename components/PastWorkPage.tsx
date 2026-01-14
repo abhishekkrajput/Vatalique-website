@@ -335,19 +335,79 @@ const PastWorkPage: React.FC = () => {
 
                             {/* VISUAL RIGHT */}
                             <div className="flex-1 min-h-[400px] relative rounded-3xl overflow-hidden border border-white/5 bg-white/[0.02]">
-                                {/* Abstract visual background */}
-                                <div className={`absolute inset-0 bg-gradient-to-br ${client.gradient} opacity-20`} />
-                                <div className="absolute inset-0 backdrop-blur-3xl" />
-
-                                {/* Animated abstract nodes */}
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="relative w-full h-full p-6 md:p-12 grid grid-cols-2 gap-4 md:gap-6 z-10 w-full">
-                                        <VisualWorkflow color={client.accent} />
-                                        <VisualModules color={client.accent} />
-                                        <VisualIntelligence color={client.accent} />
-                                        <VisualScale color={client.accent} />
+                                {/* Conditional Rendering: Image for KHANDARKAR, Abstract for others */}
+                                {client.name === "KHANDARKAR" ? (
+                                    <div className="relative w-full h-full group hover:border-rose-500/30 transition-all duration-500 rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(244,63,94,0.1)]">
+                                        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
+                                        <img
+                                            src="/vatalique_khandarkar.png"
+                                            alt="Intelligent Matchmaking Engine"
+                                            className="relative w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 z-20 mix-blend-screen"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-rose-900/40 via-transparent to-transparent z-30 pointer-events-none" />
+                                        <div className="absolute inset-0 border border-white/10 rounded-3xl z-40" />
                                     </div>
-                                </div>
+                                ) : client.name === "ZAMMERNOW" ? (
+                                    <div className="relative w-full h-full group hover:border-purple-500/30 transition-all duration-500 rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(168,85,247,0.1)]">
+                                        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
+                                        <img
+                                            src="/vatalique_zammernow.png"
+                                            alt="Fashion Quick Commerce Logistics"
+                                            className="relative w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 z-20 mix-blend-screen"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/40 via-transparent to-transparent z-30 pointer-events-none" />
+                                        <div className="absolute inset-0 border border-white/10 rounded-3xl z-40" />
+                                    </div>
+                                ) : client.name === "SHIPSARTHI" ? (
+                                    <div className="relative w-full h-full group hover:border-orange-500/30 transition-all duration-500 rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(251,146,60,0.1)]">
+                                        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
+                                        <img
+                                            src="/vatalique_shipsarthi.png"
+                                            alt="Global Logistics Operations"
+                                            className="relative w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 z-20 mix-blend-screen"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-orange-900/40 via-transparent to-transparent z-30 pointer-events-none" />
+                                        <div className="absolute inset-0 border border-white/10 rounded-3xl z-40" />
+                                    </div>
+                                ) : client.name === "GANTAVYAM" ? (
+                                    <div className="relative w-full h-full group hover:border-emerald-500/30 transition-all duration-500 rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(16,185,129,0.1)]">
+                                        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
+                                        <img
+                                            src="/vatalique_gantavyam.png"
+                                            alt="Safety-First Mobility Platform"
+                                            className="relative w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 z-20 mix-blend-screen"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/40 via-transparent to-transparent z-30 pointer-events-none" />
+                                        <div className="absolute inset-0 border border-white/10 rounded-3xl z-40" />
+                                    </div>
+                                ) : client.name === "PATENT TOOL (PATFACE)" ? (
+                                    <div className="relative w-full h-full group hover:border-blue-500/30 transition-all duration-500 rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(59,130,246,0.1)]">
+                                        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
+                                        <img
+                                            src="/vatalique_patface.png"
+                                            alt="Patent Intelligence & Legal AI"
+                                            className="relative w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 z-20 mix-blend-screen"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 via-transparent to-transparent z-30 pointer-events-none" />
+                                        <div className="absolute inset-0 border border-white/10 rounded-3xl z-40" />
+                                    </div>
+                                ) : (
+                                    <>
+                                        {/* Abstract visual background */}
+                                        <div className={`absolute inset-0 bg-gradient-to-br ${client.gradient} opacity-20`} />
+                                        <div className="absolute inset-0 backdrop-blur-3xl" />
+
+                                        {/* Animated abstract nodes */}
+                                        <div className="absolute inset-0 flex items-center justify-center">
+                                            <div className="relative w-full h-full p-6 md:p-12 grid grid-cols-2 gap-4 md:gap-6 z-10 w-full">
+                                                <VisualWorkflow color={client.accent} />
+                                                <VisualModules color={client.accent} />
+                                                <VisualIntelligence color={client.accent} />
+                                                <VisualScale color={client.accent} />
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
                             </div>
 
                         </div>
