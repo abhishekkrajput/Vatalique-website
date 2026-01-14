@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { sendBookingEmail } from '../services/emailService';
+import { submitForm } from '../services/submissionService';
 
 interface BookingModalProps {
     isOpen: boolean;
@@ -47,17 +47,27 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
 
         setIsSubmitting(true);
 
-        await sendBookingEmail({
+        console.log("Submitting Booking:", { formType: 'discovery', date: selectedDate.toDateString(), time: selectedTime });
+
+        const success = await submitForm({
+            formType: 'discovery',
+            date: selectedDate.toDateString(),
+            time: selectedTime,
             name: formData.name,
             company: formData.company,
             email: formData.email,
             phone: formData.phone,
-            date: selectedDate.toDateString(),
-            time: selectedTime
+            message: "" // Booking form has no message field UI
         });
 
         setIsSubmitting(false);
-        setView('success');
+
+        if (success) {
+            setView('success');
+        } else {
+            alert("Something went wrong. Please try again later.");
+            console.error("Booking submission failed");
+        }
     };
 
     const resetModal = () => {

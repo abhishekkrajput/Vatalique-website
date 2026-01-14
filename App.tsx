@@ -13,7 +13,7 @@ import PastWorkPage from './components/PastWorkPage';
 import ServicesPage from './components/ServicesPage';
 import TeamPage from './components/TeamPage';
 import InsightsPage from './components/InsightsPage';
-import CarriersPage from './components/CarriersPage';
+import CareersPage from './components/CareersPage';
 import AdminLogin from './components/admin/AdminLogin';
 import AdminPanel from './components/admin/AdminPanel';
 
@@ -104,8 +104,8 @@ const App: React.FC = () => {
             { label: 'Services', view: 'services' },
             { label: 'Past Work', view: 'past-work' },
             { label: 'Our Team', view: 'team' },
-            { label: 'Insights', view: 'insights' },
-            { label: 'Carriers', view: 'carriers' }
+            { label: 'Careers', view: 'careers' },
+            { label: 'Insights', view: 'insights' }
           ].map((item) => (
             <button
               key={item.label}
@@ -163,17 +163,19 @@ const App: React.FC = () => {
             </motion.div>
           )}
 
+          {activeView === 'careers' && (
+            <motion.div key="careers" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+              <CareersPage />
+            </motion.div>
+          )}
+
           {activeView === 'insights' && (
             <motion.div key="insights" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
               <InsightsPage />
             </motion.div>
           )}
 
-          {activeView === 'carriers' && (
-            <motion.div key="carriers" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <CarriersPage />
-            </motion.div>
-          )}
+
         </AnimatePresence>
 
         {/* Footer */}
