@@ -23,6 +23,7 @@ const App: React.FC = () => {
   const [activeView, setActiveView] = useState('home'); // 'home' | 'past-work' | 'team' | 'insights' | 'services' | 'carriers'
   const [isAdminMode, setIsAdminMode] = useState(false);
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -125,9 +126,11 @@ const App: React.FC = () => {
         </div>
         <div className="md:hidden flex items-center gap-4">
           <ThemeToggle />
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
+          <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 text-slate-900 dark:text-white">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
       </nav>
 
@@ -203,6 +206,65 @@ const App: React.FC = () => {
           <AdminLogin onLogin={() => setIsAdminAuthenticated(true)} />
         )
       )}
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-[300] bg-slate-50 dark:bg-[#050505] flex flex-col p-6 md:hidden"
+          >
+            <div className="flex items-center justify-between mb-12">
+              <div className="font-syncopate font-bold text-2xl tracking-tighter text-slate-900 dark:text-white">
+                VATA<span className="text-cyan-600 dark:text-cyan-400">LIQUE</span>
+              </div>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-2 text-slate-900 dark:text-white"
+              >
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="flex flex-col gap-8 items-center justify-center flex-grow">
+              {[
+                { label: 'Home', view: 'home' },
+                { label: 'Services', view: 'services' },
+                { label: 'Past Work', view: 'past-work' },
+                { label: 'Our Team', view: 'team' },
+                { label: 'Careers', view: 'careers' },
+                { label: 'Insights', view: 'insights' }
+              ].map((item) => (
+                <button
+                  key={item.label}
+                  onClick={() => {
+                    handleNavClick(item.view, (item as any).id);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`text-2xl uppercase font-bold tracking-[0.2em] transition-colors ${activeView === item.view ? 'text-cyan-600 dark:text-cyan-400' : 'text-slate-900 dark:text-gray-400'}`}
+                >
+                  {item.label}
+                </button>
+              ))}
+
+              <button
+                onClick={() => {
+                  setShowWhyUs(true);
+                  setIsMobileMenuOpen(false);
+                }}
+                className="mt-8 px-8 py-4 bg-slate-900 text-white dark:bg-white dark:text-black rounded-full text-sm font-bold uppercase tracking-widest"
+              >
+                WHY US?
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div >
   );
 };

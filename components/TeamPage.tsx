@@ -5,61 +5,83 @@ import BookingModal from './BookingModal';
 // --- DATA ---
 const TEAM = [
     {
-        name: "Abhishek Rajput",
-        role: "Founder & CEO",
+        name: "Abhi Raj",
+        role: "Head of Operations",
         responsibility: "Leads system architecture, strategy, and overall execution.",
         initials: "AR",
-        accent: "text-cyan-400"
+        accent: "text-cyan-400",
+        image: "https://pbs.twimg.com/media/G-os50XaEAAVcCt?format=jpg&name=small"
     },
     {
         name: "Uddit",
         role: "Head of Development",
         responsibility: "Owns engineering, system reliability, and production execution.",
         initials: "UD",
-        accent: "text-blue-400"
+        accent: "text-blue-400",
+        image: "https://pbs.twimg.com/media/G-orW9WbIAAIK5k?format=jpg&name=small"
     },
     {
-        name: "Dhanraj",
+        name: "Abhishek Gupta",
         role: "Head of Marketing",
         responsibility: "Drives positioning, messaging, and go-to-market clarity.",
-        initials: "DH",
-        accent: "text-purple-400"
+        initials: "AG",
+        accent: "text-purple-400",
+        image: "https://pbs.twimg.com/media/G-orSj0bIAA5xOw?format=jpg&name=small"
     },
     {
         name: "Khushi",
         role: "Head of HR",
         responsibility: "Manages people operations, culture, and team alignment.",
         initials: "KH",
-        accent: "text-rose-400"
+        accent: "text-rose-400",
+        image: "https://pbs.twimg.com/media/G-oraxNaIAAyV43?format=jpg&name=small"
     },
     {
         name: "Ishani",
         role: "Head of Research",
         responsibility: "Focuses on AI research, intelligence systems, and experimentation.",
         initials: "IS",
-        accent: "text-emerald-400"
+        accent: "text-emerald-400",
+        image: "https://pbs.twimg.com/media/G-ordoFaUAA6Rm6?format=jpg&name=small"
     },
     {
-        name: "Amit",
+        name: "Dhanraj",
         role: "Head of Creative",
         responsibility: "Leads visual systems, brand execution, and creative direction.",
-        initials: "AM",
-        accent: "text-orange-400"
+        initials: "DH",
+        accent: "text-orange-400",
+        image: "https://pbs.twimg.com/media/G-oqa6xbgAAUKVG?format=jpg&name=small"
     }
 ];
 
-const PlaceholderAvatar = ({ initials, accent }: { initials: string, accent: string }) => (
+const PlaceholderAvatar = ({ initials, accent, image }: { initials: string, accent: string, image?: string }) => (
     <div className="w-full h-full bg-white/5 flex items-center justify-center relative overflow-hidden group-hover:bg-white/10 transition-colors duration-500">
-        <div className={`text-2xl font-syncopate font-bold ${accent} opacity-50 z-10`}>{initials}</div>
-        {/* Subtle grid pattern background */}
-        <div className="absolute inset-0 opacity-10"
+        {/* Animated Background (Always Active) */}
+        <div className="absolute inset-0 opacity-20 z-0"
             style={{
                 backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
                 backgroundSize: '20px 20px'
             }}
         />
-        {/* Glow effect on hover */}
-        <div className={`absolute inset-0 bg-gradient-to-br from-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+
+        {/* Profile Image with Glassmorphism & Opacity */}
+        {image && (
+            <div className="absolute inset-0 z-10 p-4">
+                <div className="relative w-full h-full rounded-xl overflow-hidden border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.05)] group-hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] group-hover:border-white/40 transition-all duration-500">
+                    <img
+                        src={image}
+                        alt="Profile"
+                        className="w-full h-full object-cover object-[center_15%] opacity-75 group-hover:opacity-85 transition-opacity duration-500 scale-100 group-hover:scale-[1.02]"
+                    />
+                    {/* Glass Overlay/Sheen */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none mix-blend-overlay" />
+                </div>
+            </div>
+        )}
+
+        {/* Fallback Initials (Only if no image, though all have images now) */}
+        {!image && <div className={`text-2xl font-syncopate font-bold ${accent} opacity-50 z-10`}>{initials}</div>}
+
     </div>
 );
 
@@ -100,17 +122,17 @@ const TeamPage: React.FC = () => {
                             className="group relative bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden hover:border-white/10 transition-colors"
                         >
                             {/* Avatar Area */}
-                            <div className="h-64 w-full border-b border-white/5">
-                                <PlaceholderAvatar initials={member.initials} accent={member.accent} />
+                            <div className="aspect-square w-full border-b border-white/5">
+                                <PlaceholderAvatar initials={member.initials} accent={member.accent} image={member.image} />
                             </div>
 
                             {/* Content Area */}
                             <div className="p-8 space-y-4">
                                 <div>
-                                    <h3 className="text-xl font-syncopate font-bold text-white">{member.name}</h3>
-                                    <p className={`text-xs font-bold uppercase tracking-widest ${member.accent} mt-1`}>{member.role}</p>
+                                    <h3 className="text-xl font-syncopate font-bold text-white group-hover:text-cyan-50 transition-colors duration-300">{member.name}</h3>
+                                    <p className={`text-xs font-bold uppercase tracking-widest ${member.accent} mt-1 group-hover:tracking-[0.25em] transition-all duration-300`}>{member.role}</p>
                                 </div>
-                                <p className="text-gray-400 text-sm leading-relaxed border-l border-white/10 pl-4">
+                                <p className="text-gray-400 text-sm leading-relaxed border-l border-white/10 pl-4 group-hover:border-cyan-500/50 transition-colors duration-300">
                                     {member.responsibility}
                                 </p>
                             </div>

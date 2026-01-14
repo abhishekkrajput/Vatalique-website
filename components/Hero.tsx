@@ -62,12 +62,12 @@ const Hero: React.FC = () => {
             We design and deploy custom AI agents that automate sales, support, operations, and decision-making — tailored to your business.
           </p>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full md:w-auto">
             <motion.button
               onClick={() => setIsModalOpen(true)}
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(0, 255, 255, 0.3)" }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 bg-slate-900 text-white hover:bg-black dark:bg-white dark:text-black dark:hover:bg-gray-200 font-bold uppercase tracking-widest text-sm rounded-full transition-all duration-300 shadow-xl dark:shadow-none border border-transparent dark:border-white/10"
+              className="w-full md:w-auto px-10 py-5 bg-slate-900 text-white hover:bg-black dark:bg-white dark:text-black dark:hover:bg-gray-200 font-bold uppercase tracking-widest text-sm rounded-full transition-all duration-300 shadow-xl dark:shadow-none border border-transparent dark:border-white/10"
             >
               Book Call
             </motion.button>

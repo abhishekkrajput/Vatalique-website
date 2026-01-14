@@ -14,7 +14,7 @@ const ServiceCard: React.FC<{ service: Service, index: number, onSelect: (s: Ser
       className={`flex flex-col md:flex-row items-center gap-12 py-24 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
     >
       <div className="flex-1 space-y-8">
-        <h3 className="text-4xl md:text-5xl font-syncopate font-bold text-slate-900 dark:text-white transition-colors duration-300">
+        <h3 className="text-3xl md:text-5xl font-syncopate font-bold text-slate-900 dark:text-white transition-colors duration-300">
           {service.title}
         </h3>
         <p className="text-slate-600 dark:text-gray-400 text-lg leading-relaxed max-w-xl transition-colors duration-300">

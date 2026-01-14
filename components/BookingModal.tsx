@@ -149,7 +149,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="relative w-full max-w-4xl bg-[#111] border border-cyan-500/20 rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[600px]"
+                        className="relative w-full max-w-4xl bg-[#111] border border-cyan-500/20 rounded-2xl shadow-2xl overflow-y-auto md:overflow-hidden flex flex-col md:flex-row max-h-[90vh] md:min-h-[600px]"
                     >
                         {/* Left Panel: Branding & Info */}
                         <div className="md:w-1/3 bg-[#0a0a0a] p-8 border-b md:border-b-0 md:border-r border-white/10 flex flex-col justify-between relative overflow-hidden">
