@@ -82,7 +82,7 @@ const TheVataliqueHouse: React.FC = () => {
                     <div className="max-w-4xl space-y-5">
                         {/* Primary Sentence - Crystal Clear */}
                         <p className="text-white text-2xl md:text-3xl font-bold leading-snug tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,1)] subpixel-antialiased">
-                            We are a small, focused team building systems that run inside real businesses.
+                            <span className="bg-cyan-900/30 text-cyan-100 px-2 py-1 rounded leading-loose box-decoration-clone">We are a small, focused team building systems that run inside real businesses.</span>
                         </p>
 
                         {/* Secondary Sentence */}

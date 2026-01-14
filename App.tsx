@@ -90,8 +90,9 @@ const App: React.FC = () => {
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-cyan-400 z-[110] origin-left" style={{ scaleX }} />
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-[100] px-6 md:px-12 py-8 flex items-center justify-between mix-blend-difference text-gray-900 dark:text-white">
-        <div className="flex items-center gap-2">
+      <nav className="fixed top-0 w-full z-[100] px-6 md:px-12 py-6 flex items-center justify-between mix-blend-difference text-gray-900 dark:text-white pointer-events-none">
+        {/* Logo (Left) */}
+        <div className="flex items-center gap-2 pointer-events-auto">
           <div
             onClick={() => handleNavClick('home')}
             className="font-syncopate font-bold text-2xl tracking-tighter text-slate-900 dark:text-white cursor-pointer select-none"
@@ -99,7 +100,9 @@ const App: React.FC = () => {
             VATA<span className="text-cyan-600 dark:text-cyan-400">LIQUE</span>
           </div>
         </div>
-        <div className="hidden md:flex items-center gap-10">
+
+        {/* Desktop Navigation Strip (Center) - Crystal Glass */}
+        <div className="hidden md:flex items-center gap-8 px-10 py-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-full shadow-[0_0_20px_rgba(0,0,0,0.1)] absolute left-1/2 -translate-x-1/2 pointer-events-auto transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] hover:border-white/20">
           {[
             { label: 'Home', view: 'home' },
             { label: 'Services', view: 'services' },
@@ -111,11 +114,21 @@ const App: React.FC = () => {
             <button
               key={item.label}
               onClick={() => handleNavClick(item.view, (item as any).id)}
-              className={`text-[10px] uppercase font-bold tracking-[0.3em] transition-colors ${activeView === item.view ? 'text-cyan-400' : 'text-gray-400 hover:text-cyan-400'}`}
+              className={`relative text-[10px] uppercase font-bold tracking-[0.2em] transition-all duration-300 hover:scale-110 ${activeView === item.view ? 'text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)] scale-110' : 'text-gray-300 hover:text-white'}`}
             >
               {item.label}
+              {activeView === item.view && (
+                <motion.div
+                  layoutId="activeNavDot"
+                  className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-cyan-400 rounded-full shadow-[0_0_5px_rgba(6,182,212,1)]"
+                />
+              )}
             </button>
           ))}
+        </div>
+
+        {/* Desktop Actions (Right) */}
+        <div className="hidden md:flex items-center gap-6 pointer-events-auto">
           <ThemeToggle />
           <button
             onClick={() => setShowWhyUs(true)}
@@ -124,7 +137,9 @@ const App: React.FC = () => {
             WHY US?
           </button>
         </div>
-        <div className="md:hidden flex items-center gap-4">
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center gap-4 pointer-events-auto">
           <ThemeToggle />
           <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 text-slate-900 dark:text-white">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
