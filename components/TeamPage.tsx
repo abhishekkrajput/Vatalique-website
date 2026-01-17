@@ -13,14 +13,6 @@ const TEAM = [
         image: "https://pbs.twimg.com/media/G-oxf0_bMAAH394?format=jpg&name=small"
     },
     {
-        name: "Uddit",
-        role: "Head of Development",
-        responsibility: "Owns engineering, system reliability, and production execution.",
-        initials: "UD",
-        accent: "text-blue-400",
-        image: "https://pbs.twimg.com/media/G-orW9WbIAAIK5k?format=jpg&name=small"
-    },
-    {
         name: "Abhishek Gupta",
         role: "Head of Marketing",
         responsibility: "Drives positioning, messaging, and go-to-market clarity.",
