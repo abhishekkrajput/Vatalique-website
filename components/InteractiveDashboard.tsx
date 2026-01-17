@@ -5,7 +5,7 @@ const TESTIMONIALS = [
   {
     name: "Jamee",
     role: "Khandarkar • Matrimonial",
-    quote: "“Vatalique helped us automate critical workflows that were previously handled manually. The system they built didn’t just work — it scaled with our users and reduced operational friction significantly.”",
+    quote: "\"Vatalique helped us automate critical workflows that were previously handled manually. The system they built didn't just work — it scaled with our users and reduced operational friction significantly.\"",
     image: "/vatalique_face_1.jpg",
     link: "https://khandarkar.com/explore",
     btn: "Visit Site"
@@ -13,23 +13,23 @@ const TESTIMONIALS = [
   {
     name: "Darshan",
     role: "Zammernow • Fashion QC",
-    quote: "“We needed automation that could keep up with speed, volume, and growth. Vatalique delivered systems that run reliably without constant oversight. This wasn’t a demo — it was real execution.”",
+    quote: "\"We needed automation that could keep up with speed, volume, and growth. Vatalique delivered systems that run reliably without constant oversight. This wasn't a demo — it was real execution.\"",
     image: "/vatalique_face_2.jpg",
     link: "https://zammernow.com/",
     btn: "Visit Site"
   },
   {
-    name: "Narayan",
-    role: "Shipsarthi • Logistics",
-    quote: "“Our operations involved too much manual coordination. Vatalique designed intelligent systems that streamlined decision-making and removed operational bottlenecks completely.”",
+    name: "Padmakumar",
+    role: "Zilo • Quick Commerce",
+    quote: "\"Delivering fashion in 60 minutes required flawless logistics and AI-driven styling. Vatalique built the systems that power our rapid delivery and personalized recommendations at scale.\"",
     image: "/vatalique_face_3.jpg",
-    link: "https://shipsarthi.com/",
-    btn: "Visit Site"
+    link: "https://zilo.one/",
+    btn: "Visit Platform"
   },
   {
     name: "Siddhart",
     role: "Gantavyam • Mobility",
-    quote: "“Building for safety requires reliability and trust. Vatalique approached our system with that seriousness. The automation they delivered made our operations more predictable and scalable.”",
+    quote: "\"Building for safety requires reliability and trust. Vatalique approached our system with that seriousness. The automation they delivered made our operations more predictable and scalable.\"",
     image: "/vatalique_face_4.jpg",
     link: "https://www.gantavyam.site/",
     btn: "Visit Site"
@@ -37,7 +37,7 @@ const TESTIMONIALS = [
   {
     name: "Bikas Lohia",
     role: "Sitabience IP • Legal Tech",
-    quote: "“The system Vatalique built transformed how patents are drafted. Clear inputs, structured intelligence, and reliable outputs. It saved time, reduced complexity, and delivered consistent results.”",
+    quote: "\"The system Vatalique built transformed how patents are drafted. Clear inputs, structured intelligence, and reliable outputs. It saved time, reduced complexity, and delivered consistent results.\"",
     image: "/vatalique_face_5.jpg",
     link: "https://www.patface.com/",
     btn: "See Work"

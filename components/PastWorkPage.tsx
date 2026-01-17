@@ -51,26 +51,74 @@ const CLIENTS = [
         accent: "text-purple-400"
     },
     {
-        name: "SHIPSARTHI",
-        industry: "Logistics & Operations",
-        website: "https://shipsarthi.com/",
-        context: "A logistics platform with complex coordination and multi-step operational workflows.",
+        name: "ZILO",
+        industry: "Quick Commerce & Fashion Tech",
+        website: "https://zilo.one/",
+        context: "A rapid fashion delivery platform delivering premium fashion from 250+ brands in under 60 minutes with AI-powered styling recommendations.",
         problem: [
-            "Manual coordination overhead",
-            "Process bottlenecks",
-            "Low operational visibility"
+            "Long fashion delivery times",
+            "No try-before-buy options",
+            "Poor styling recommendations"
         ],
         built: [
-            "Workflow automation systems",
-            "Intelligent coordination logic",
-            "Structured operations layer"
+            "60-minute delivery logistics engine",
+            "30-minute home trial system",
+            "AI-powered style matching algorithm"
         ],
         outcome: [
-            "Streamlined logistics",
-            "Reduced friction",
-            "Predictable execution"
+            "Fashion delivered in under 60 minutes",
+            "Risk-free try-at-home experience",
+            "Personalized styling at scale"
         ],
-        action: "Visit Site",
+        action: "Visit Platform",
+        gradient: "from-violet-500/20 to-purple-500/5",
+        accent: "text-violet-400"
+    },
+    {
+        name: "CHANNEL3",
+        industry: "Commerce Infrastructure & API",
+        website: "https://trychannel3.com/",
+        context: "A universal product database and API that makes every product on the internet discoverable for AI agents and developers.",
+        problem: [
+            "Fragmented product data across web",
+            "No unified API for commerce",
+            "Complex affiliate deal management"
+        ],
+        built: [
+            "Universal product graph with 50M+ products",
+            "Real-time catalog API for developers",
+            "Multimodal AI for product extraction"
+        ],
+        outcome: [
+            "Any product searchable via single API",
+            "5% commission on sales, zero setup",
+            "Powering 100s of AI shopping agents"
+        ],
+        action: "Explore API",
+        gradient: "from-green-500/20 to-emerald-500/5",
+        accent: "text-green-400"
+    },
+    {
+        name: "PLAYABLY",
+        industry: "E-commerce Gamification",
+        website: "https://playably.ai/",
+        context: "A gamification platform that transforms e-commerce touchpoints into interactive mini-games, quizzes, and shoppable experiences.",
+        problem: [
+            "Low customer engagement rates",
+            "High cart abandonment",
+            "Poor email/SMS opt-in rates"
+        ],
+        built: [
+            "Shoppable mini-game engine",
+            "AI-integrated quiz builder",
+            "Gamified rebates system"
+        ],
+        outcome: [
+            "30% higher sales than traditional discounts",
+            "40% increase in email sign-ups",
+            "47% boost in engagement"
+        ],
+        action: "See Platform",
         gradient: "from-orange-500/20 to-amber-500/5",
         accent: "text-orange-400"
     },
@@ -356,17 +404,6 @@ const PastWorkPage: React.FC = () => {
                                             className="relative w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 z-20 mix-blend-screen"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/40 via-transparent to-transparent z-30 pointer-events-none" />
-                                        <div className="absolute inset-0 border border-white/10 rounded-3xl z-40" />
-                                    </div>
-                                ) : client.name === "SHIPSARTHI" ? (
-                                    <div className="relative w-full h-full group hover:border-orange-500/30 transition-all duration-500 rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(251,146,60,0.1)]">
-                                        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm z-10" />
-                                        <img
-                                            src="/vatalique_shipsarthi.png"
-                                            alt="Global Logistics Operations"
-                                            className="relative w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 z-20 mix-blend-screen"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-orange-900/40 via-transparent to-transparent z-30 pointer-events-none" />
                                         <div className="absolute inset-0 border border-white/10 rounded-3xl z-40" />
                                     </div>
                                 ) : client.name === "GANTAVYAM" ? (

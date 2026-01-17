@@ -14,6 +14,7 @@ import ServicesPage from './components/ServicesPage';
 import TeamPage from './components/TeamPage';
 import InsightsPage from './components/InsightsPage';
 import CareersPage from './components/CareersPage';
+import CustomSolutionsPage from './components/CustomSolutionsPage';
 import AdminLogin from './components/admin/AdminLogin';
 import AdminPanel from './components/admin/AdminPanel';
 
@@ -109,7 +110,8 @@ const App: React.FC = () => {
             { label: 'Past Work', view: 'past-work' },
             { label: 'Our Team', view: 'team' },
             { label: 'Careers', view: 'careers' },
-            { label: 'Insights', view: 'insights' }
+            { label: 'Insights', view: 'insights' },
+            { label: 'Custom Solutions', view: 'custom-solutions' }
           ].map((item) => (
             <button
               key={item.label}
@@ -193,6 +195,11 @@ const App: React.FC = () => {
             </motion.div>
           )}
 
+          {activeView === 'custom-solutions' && (
+            <motion.div key="custom-solutions" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+              <CustomSolutionsPage />
+            </motion.div>
+          )}
 
         </AnimatePresence>
 
@@ -253,7 +260,8 @@ const App: React.FC = () => {
                 { label: 'Past Work', view: 'past-work' },
                 { label: 'Our Team', view: 'team' },
                 { label: 'Careers', view: 'careers' },
-                { label: 'Insights', view: 'insights' }
+                { label: 'Insights', view: 'insights' },
+                { label: 'Custom Solutions', view: 'custom-solutions' }
               ].map((item) => (
                 <button
                   key={item.label}
